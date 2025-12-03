@@ -1,0 +1,11 @@
+id,name,lat,lon,note,approximate
+stop_solapur_bus_stand_main,Solapur Bus Stand (Rupa Bhavani Road, Civil Lines),17.660772,75.906899,Provided,0
+stop_solapur_railway_station,Solapur Railway Station,17.664423,75.892970,Provided,0
+stop_solapur_city_centre,Solapur (city centre),17.659920,75.906387,Provided,0
+stop_solapur_bypass_dmart,Solapur — Bypass (in front of Dmart, New Budhwar Peth),17.6900,75.9000,Nearest Area (Dmart, Solapur Bypass),1
+stop_nh465_solapur_south,Bus Stop, NH 465 (Solapur South),17.6489,75.9838,Nearest Area (Kumbhari on NH 465),1
+stop_solapur_bus_stand_2_indira_nagar,Solapur Bus Stand 2, Bharatratna Indira Nagar (Inner Ring Road),17.6532,75.9224,Nearest Area (Indira Nagar),1
+stop_kumbhari_bus_stand,Kumbhari Bus Stand,17.6489,75.9838,Nearest Area (Kumbhari Village),1
+stop_rangbhavan_smt_mulegaon,Rangbhavan / SMT Bus Stop (Mulegaon / South Solapur),17.6186,75.9388,Nearest Area (Mulegaon),1
+stop_msrtc_smt_khed_area,MSRTC / SMT Bus Stand (area Khed / city),17.6200,75.9200,Approximate Solapur Khed Area,1
+stop_nk_orchid_new,NK Orchid stop (new),17.717774,75.919666,Nearest Area (NK Orchid College),1
