@@ -86,30 +86,14 @@ curl -X POST -H "Content-Type: application/json" \
 - Helper file: `static/app.js` — smaller utility script; may be legacy/optional depending on your UI flow.
 - UI features: live vehicle list, map markers with rotation and trails, stops and route rendering, filter controls, ETA estimates and arrivals list.
 
-## Operational Notes & Recommendations
+## Notes & Recommendations
 
 - Storage: Using CSV is convenient for demos but not robust under concurrent writers; consider migrating to SQLite or PostgreSQL for production workloads.
 - Scaling: Endpoints often read the entire CSV into memory; this will not scale for very large logs. Implement pagination or a DB-backed store when needed.
 - SSE: The current SSE loop uses blocking `time.sleep(1)` in a Flask request handler — this can block worker threads in WSGI servers. Use an async/event-backed solution (Redis pub/sub, a message broker, or an ASGI server) for production-grade streaming.
 
-## Security & Privacy
-
-- The app currently has no authentication and will expose location data to anyone who can reach it. Do NOT expose the server publicly without adding authentication or a secure gateway (VPN, reverse proxy with auth).
-- Debug prints in `app.py` log full request headers and payloads — remove or reduce logging before production to avoid leaking info.
-
-## Suggested Improvements / Roadmap
-
-- Add authentication (API token, OAuth, or JWT) for ingestion and admin endpoints.
-- Make `CSV_FILE` and other settings configurable via environment variables.
-- Implement a database-backed storage (SQLite for local, Postgres for deployed systems) with retention/rotation.
-- Improve SSE implementation with an event queue or move to an async framework.
-- Add basic tests and CI checks.
-- Provide a `Dockerfile` and `docker-compose.yml` for reproducible deployments.
-
-## Troubleshooting
-
-- If the UI shows no vehicles: confirm `bus.csv` exists and has rows, and the server is running.
-- If static files aren't served: ensure the working directory contains `static/` and the app has file read permissions.
+## Workflow
+![Image2](https://github.com/arshad-perampalli/Real_Time_Public_Transport_Tracking_for_Small_Cities/blob/main/Workflow.png?raw=true)
 
 ## Development
 
@@ -123,16 +107,11 @@ curl -X POST -H "Content-Type: application/json" \
 	-d '{"tid":"testbus","lat":17.6599,"lon":75.9064,"tst":1763652003}' \
 	http://localhost:5000/location
 ```
+## Results
+![Image2](https://github.com/arshad-perampalli/Real_Time_Public_Transport_Tracking_for_Small_Cities/blob/main/Output.png?raw=true)
 
 ## Author
 
 Arshad Perampalli
 
----
 
-If you'd like, I can:
-- Add `CORS(app)` and make configuration via environment variables in `app.py`.
-- Add a `Dockerfile` + `docker-compose.yml` for running the service and the UI.
-- Implement a small SQLite migration to replace CSV with a lightweight DB.
-
-Tell me which change you'd like next and I'll implement it.
