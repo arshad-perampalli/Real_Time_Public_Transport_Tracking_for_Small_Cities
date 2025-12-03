@@ -2,7 +2,6 @@
 
 A lightweight GPS tracking server and web UI designed for small-city bus fleets and pilot deployments. The app accepts OwnTracks-friendly location posts, stores them in a CSV log (simple default), and exposes APIs and a Leaflet web interface for live vehicle monitoring.
 
-**Status:** Prototype / demo. Suitable for local testing and small pilots. See **Security** before exposing publicly.
 
 ## Repository Structure
 
